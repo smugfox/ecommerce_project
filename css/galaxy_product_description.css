@@ -1,0 +1,157 @@
+ul {
+    list-style-type: none;
+    line-height:20px;
+}
+
+a {
+    text-decoration:none;
+}
+
+#container {
+    width:1020px;
+    margin:auto;
+    background-color:#ccc;
+}
+
+#header {
+     
+    width:960px;
+    height:64px;
+    margin:auto;
+    display:block;
+}
+
+#logo {
+    width:960px;
+    height: 64px;
+    margin:auto;
+    display:block;
+}
+
+#logo h1 {
+    margin:0;
+}
+
+#nav {
+    width:960px;
+    height:67px;
+    margin:0 30px 30px 30px;
+    display:block;
+    background-color:#333f43;
+}
+
+#nav ul {
+    width:745px;
+    padding:0;
+}
+
+#nav ul li {
+    width:104px;
+    height:64px;
+    float:left;
+    display:block;
+}
+
+#nav ul li a {
+    color:#fff;
+}
+
+.home {
+    width:36px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;
+}
+
+.products {
+    width:36px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;   
+}
+
+.about_us {
+    width:66px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;
+}
+
+.sign_up {
+    width:56px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;
+}
+
+
+#main {
+    width: 960px;
+    display:table;
+    margin:auto;
+}
+
+#primary {
+    width:960px;
+    float:left;
+    display:block;
+    margin-bottom: 40px;
+}
+.picture_image {
+   float:left;
+}
+.picture_image img {
+    width:450px;
+    height:500px;
+}
+
+.price {
+    width:500px;
+    float:left;
+}
+
+.price h2 {
+    font-size: 30px;
+    margin: 0 0 0 40px;
+}
+
+.price p {
+    margin: 0 0 0 40px;
+    font-size:25px;
+}
+
+#footer {
+    width:960px;
+    height:248px;
+    margin:auto;
+    display: block;
+}
+
+#footer_left {
+    width:280px;
+    float:left;
+    margin-right:36px;
+}
+
+#footer_left h3 {
+    margin: 0 0 22px 0;
+}
+
+#footer_left p {
+    margin: 0 0 20px 0;
+    height:84px;
+}
+
+#footer_mid {
+    width: 300px;
+    float:left;
+}
+
+#footer_mid ul li {
+    float:left;
+    margin:0 10px 0 0;
+}
