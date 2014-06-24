@@ -25,6 +25,7 @@
     <head>
         <title>Eshop</title>
         <link rel="stylesheet" type="text/css" href="../css/galaxy_product_description.css" /> 
+ 
     </head>
     <body>
         <!--CONTAINER-->

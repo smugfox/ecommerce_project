@@ -114,23 +114,21 @@ a {
     display:block;
 }
 
-.cell_row_left .cell {
-    margin: 0 30px 30px 0;
-}
-
-.cell_row_right .cell {
-    margin: 0 0 30px 0;
-}
 
 .cell {
     width:300px;
     height:415px;
     float:left;
+    margin:0 5px 0 5px;
 }
 
 .cell_image {
     width: 300px;
     height: 300px;
+}
+.cell_image img {
+    height: 300px;
+    width: 300px;
 }
 
 .cell_description {

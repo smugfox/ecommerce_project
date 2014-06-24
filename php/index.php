@@ -15,7 +15,8 @@
 <html>
     <head>
         <title>Eshop</title>
-        <link rel="stylesheet" type="text/css" href="../css/galaxies.css" /> 
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+
     </head>
     <body>
         <!--CONTAINER-->
@@ -54,8 +55,6 @@
               </ul>
             </div>
 
-
-            </div>
               <!--SLIDER-->
               <div id=slider>
                 <img src="../img/scrolling.gif">
@@ -63,7 +62,6 @@
               
             <!--MAIN-->
               <div id="main">
-                <h2>Products</h2>
                 <!--PRIMARY-->
                 <div id="primary">
                     <!--CONTENT-->
@@ -74,17 +72,31 @@
                         
                 ?>
                          
-                 <div class="large_products">
-                      <div class="cell_row_left">
+                 
+                      
                         <div class="cell">
                           <div class="cell_image">
                           <img src="../img/<?php echo $row["Image"];?>"></div>
                           <div class="cell_description"><h4><?php echo $row["Product_Name"]; ?></h4></div>
                         </div>  
-                      </div>
-                    </div>
-            <?php } ?> 
+                      
+
+            <?php } ?>
                 </div>
+                <!--SIDE-->
+                <div id="side">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Donec egestas purus malesuada sem feugiat, et mollis tortor 
+                  pharetra. Quisque imperdiet ut diam vel ullamcorper. Integer 
+                  vulputate condimentum pharetra. Fusce dolor augue, volutpat 
+                  faucibus risus a, sagittis laoreet nisl. Duis faucibus, sem 
+                  ut posuere elementum, mi urna volutpat orci, non hendrerit 
+                  orci dolor eu diam. Phasellus elementum suscipit volutpat. 
+                  Morbi vulputate erat interdum feugiat commodo. Nunc et nulla 
+                  tempor, sollicitudin mi id, vestibulum risus. Praesent auctor 
+                  nisl orci, vel tristique turpis ornare sed.</p>  
+                </div>
+                <!--END OF SIDE-->
               </div>
               <!--END MAIN-->
               

@@ -15,6 +15,7 @@
     <head>
         <title>Eshop</title>
         <link rel="stylesheet" type="text/css" href="../css/galaxies.css" /> 
+        
     </head>
     <body>
         <!--CONTAINER-->
