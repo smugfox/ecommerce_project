@@ -1,0 +1,6 @@
+  $debug = $_GET["debug"];
+  
+  
+   if ($debug == "true") {
+        echo "row: " . $row["Product_Name"];
+    };

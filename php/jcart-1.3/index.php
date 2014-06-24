@@ -39,12 +39,12 @@ session_start();
 						<input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken'];?>" />
 						<input type="hidden" name="my-item-id" value="ABC-123" />
 						<input type="hidden" name="my-item-name" value="Soccer Ball" />
-						<input type="hidden" name="my-item-price" value="25.00" />
+						<input type="hidden" name="my-item-price" value="10000" />
 						<input type="hidden" name="my-item-url" value="" />
 
 						<ul>
 							<li><strong>Soccer Ball</strong></li>
-							<li>Price: $25.00</li>
+							<li>Price: $10000</li>
 							<li>
 								<label>Qty: <input type="text" name="my-item-qty" value="1" size="3" /></label>
 							</li>
