@@ -95,6 +95,10 @@ a {
     background-color:#333f43;
 }
 
+#slider {
+    width: 960px;
+    margin: auto;
+}
 
 #main {
     width: 960px;
@@ -127,6 +131,10 @@ a {
 }
 
 .cell_image {
+    width: 300px;
+    height: 300px;
+}
+.cell_image img {
     width: 300px;
     height: 300px;
 }
