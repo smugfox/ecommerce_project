@@ -9,7 +9,7 @@
             <div class="header_cart">
            
                 <div id="logo">
-                    <h1><a href="#">WELCOME TO MY ESHOP</a></h1>
+                    <a href="index.php"><img src="../img/logo.png"></a>
                 </div>
         <!--END LOGO-->
             </div>

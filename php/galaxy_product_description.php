@@ -30,6 +30,7 @@ session_start();
 <html>
     <head>
         <title>Eshop</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/galaxy_product_description.css" />
         <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
         <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
