@@ -16,14 +16,14 @@ a {
 #header {
      
     width:960px;
-    height:64px;
+    height:100px;
     margin:auto;
     display:block;
 }
 
 #logo {
     width:960px;
-    height: 64px;
+    height: 100px;
     margin:auto;
     display:block;
 }
@@ -79,7 +79,7 @@ a {
     background-color:#333f43;   
 }
 
-.about_us {
+.login {
     width:66px;
     height:20px;
     padding:22px 34px;
@@ -88,6 +88,22 @@ a {
 }
 
 .sign_up {
+    width:56px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;
+}
+
+.logout {
+    width:56px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43; 
+}
+
+.account {
     width:56px;
     height:20px;
     padding:22px 34px;
@@ -107,14 +123,14 @@ a {
 }
 
 #cell_div {
-    width:960px;
+    width: 960px;
     float:right;
     display:block;
 }
 
 .cell {
-    width:300px;
-    height:415px;
+    width: 300px;
+    height: 415px;
     float:left;
     margin: 0 10px 0 10px;
 }
@@ -124,15 +140,40 @@ a {
     height: 300px;
 }
 .cell_image img {
-    width: 300px;
     height: 300px;
+    width: 300px;
+    margin-bottom:0;
 }
 
-.cell_description {
+.cell_description_box {
     width:300px;
-    height: 115px;
+    height: 100px;
+    margin-top:0;
+}
+.cell_description_box:hover {
+    background-color: #A3D6E6;
 }
 
+.description {
+    width: 300px;
+    height:68px;
+}
+
+.description h4 {
+    width: 200px;
+    padding: 15px 0 0 8px;
+    margin-top:0;
+    padding-top:40px;
+}
+
+.description p {
+    float:right;
+    margin-top:40px;
+    color: #fff;
+    padding: 10px;
+    background-color:#000;
+    border-radius:8px;
+}
 
 #footer {
     width:960px;

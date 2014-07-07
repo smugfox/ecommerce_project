@@ -1,4 +1,9 @@
-<?php?>
+<?php
+
+include_once('jcart/jcart.php');
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>

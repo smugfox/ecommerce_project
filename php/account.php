@@ -6,6 +6,8 @@
 <?php
 
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
+    $result = mysqli_query($con,"SELECT * FROM Customers where ID = '" . $_SESSION['ID'] . "';");
+    $row = mysqli_fetch_array($result);
     
     // Check connection
     if (mysqli_connect_errno()) {
@@ -17,7 +19,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Eshop</title>
+        <title>Account</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/galaxies.css" />
         <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
@@ -56,29 +58,24 @@
               
             <!--MAIN-->
               <div id="main">
-                <h2>Products</h2>
+                <h2>My Account</h2>
                 <!--PRIMARY-->
                 <div id="cell_div">
                     <!--CONTENT-->
-           
-          <?php
-                    $result = mysqli_query($con,"SELECT * FROM Products;");
-                    while($row = mysqli_fetch_array($result)) {
-                        
+                    <?php  
+                    //3.1.4 if the user is logged in Greets the user with message
+                    if (isset($_SESSION['my_email_address'])){
+                        $my_email_address = $_SESSION['my_email_address'];
+                        echo "<p>Hi <strong>" . $row["First_Name"] . "</strong>! <br/></p>";
+                        echo "<p>Hi <strong>" . $my_email_address . "</strong>! <br/></p>";
+                        echo "<p>This is the Members Area. Notice 'menu' has changed since user session exists. Click 'Log Out' to destroy session! </br></p>";
+                    }
+                    else
+                    {
+                        //3.2 Redirect user back to login.php
+                        header("location:index.php");
+                    }
                 ?>
-                <a href="galaxy_product_description.php?ID=<?php echo $row["ID"];?>">
-                        <div class="cell">
-                          <div class="cell_image">
-                            <img src="../img/<?php echo $row["Image"];?>"></div>
-                          <div class="cell_description_box">
-                            <div class="description">
-                                <p>$<?php echo $row["Price"]; ?></p>
-                                <h4><?php echo $row["Product_Name"]; ?></h4>
-                            </div>
-                          </div>
-                        </div> 
-                </a>
-            <?php } ?> 
                 </div>
               </div>
               <!--END MAIN-->

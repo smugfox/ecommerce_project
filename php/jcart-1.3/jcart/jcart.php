@@ -79,8 +79,9 @@ class Jcart {
 
 			// If the item is already in the cart, increase its quantity
 			if($this->qtys[$id] > 0) {
-				$this->qtys[$id] += $qty;
-				$this->update_subtotal();
+			//	$this->qtys[$id] += $qty;
+			//	$this->update_subtotal();
+			
 			}
 			// This is a new item
 			else {

@@ -8,6 +8,7 @@
 // If your page calls session_start() be sure to include jcart.php first
 include_once('jcart-1.3/jcart/jcart.php');
 
+
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -19,9 +20,9 @@ session_start();
 
 		<title>jCart - Free Ajax/PHP shopping cart</title>
 
-		<link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/style.css" />
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/style.css" />
 
-		<link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart/css/jcart.css" />
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
 	</head>
 	<body>
 		<div id="wrapper">
@@ -45,7 +46,7 @@ session_start();
 			<div class="clear"></div>
 		</div>
 
-		<script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
-		<script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
+		<script type="text/javascript" src="jcart/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="jcart/js/jcart.min.js"></script>
 	</body>
 </html>

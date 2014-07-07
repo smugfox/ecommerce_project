@@ -3,19 +3,15 @@
 
     session_start();
 ?>
-
-
 <?php
 
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
 
     // Check connection
     if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 ?>
-
-<!-- END OF LOOP -->
 
 <!DOCTYPE html>
 <html>
@@ -27,16 +23,37 @@
     <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
     <script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
     </head>
-    
+    <body>
+        <!--CONTAINER-->
+        <div id="container"> 
     <!--CART-->
     <div id="sidebar">
         <div id="jcart"><?php $jcart->display_cart();?></div>
     </div>
     <!--END OF CART-->
-    
-    <!--HEADER-->
-        <?php include'header.php';?>
-    <!--END OF HEADER-->
+            <!--HEADER-->
+          <div id=header>
+            <div class="header_cart">
+           
+                <div id="logo">
+                    <a href="index.php"><img src="../img/logo.png"></a>
+                </div>
+        <!--END LOGO-->
+            </div>
+          </div>
+          
+          <div id="nav">
+              <!--SEARCH-->
+              
+              <form method="POST" action="search.php">
+                  <input type="text" name="search" class="field" id="q">
+                  <input type="submit" value="Submit" name="submit">
+              </form>
+              <!--END SEARCH-->
+    <!--NAV-->
+        <?php include'nav.php';?>
+        </div>
+    <!--END OF NAV-->
     
     <!--SLIDER-->
     <div id=slider>
@@ -61,8 +78,12 @@
     <div class="cell_image">
         <img src="../img/<?php echo $row["Image"];?>">
     </div>
-    <div class="cell_description">
-        <h4><?php echo $row["Product_Name"]; ?></h4>
+    <div class="cell_description_box">
+        <div class="description">
+            <p>$<?php echo $row["Price"]; ?></p>
+            <h4><?php echo $row["Product_Name"]; ?></h4>
+            
+        </div>
     </div>
     </div> 
         </a>

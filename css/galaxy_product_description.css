@@ -16,14 +16,14 @@ a {
 #header {
      
     width:960px;
-    height:64px;
+    height:100px;
     margin:auto;
     display:block;
 }
 
 #logo {
     width:960px;
-    height: 64px;
+    height: 100px;
     margin:auto;
     display:block;
 }
@@ -38,6 +38,13 @@ a {
     margin:0 30px 30px 30px;
     display:block;
     background-color:#333f43;
+}
+
+#nav form {
+    border:none;
+    margin-right:0;
+    float:right;
+    margin-top:20px;
 }
 
 #nav ul {
@@ -72,7 +79,7 @@ a {
     background-color:#333f43;   
 }
 
-.about_us {
+.login {
     width:66px;
     height:20px;
     padding:22px 34px;
@@ -87,6 +94,23 @@ a {
     float:left;
     background-color:#333f43;
 }
+
+.logout {
+    width:56px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43; 
+}
+
+.account {
+    width:56px;
+    height:20px;
+    padding:22px 34px;
+    float:left;
+    background-color:#333f43;
+}
+
 
 
 #main {

@@ -15,11 +15,14 @@ session_start();
     }
     
     $productID = $_GET["ID"];
-            
-    if($productID == "")
+    
+    if ($productID){
+        $_SESSION['ID'] = $productID;
+    } else
       {
-        $productID="ID";
+        $productID = $_SESSION['ID'];
       }
+      
     $result = mysqli_query($con,"SELECT * FROM Products where ID = '" . $productID . "';");
     $row = mysqli_fetch_array($result);
     
@@ -34,13 +37,35 @@ session_start();
         <link rel="stylesheet" type="text/css" href="../css/galaxy_product_description.css" />
         <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
         <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
-        <script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
     </head>
-		<div id="sidebar">
-			<div id="jcart"><?php $jcart->display_cart();?></div>
-		</div>
-<?php include'header.php' ?>
-
+        <!--CONTAINER-->
+        <div id="container"> 
+    <!--CART-->
+    <div id="sidebar">
+        <div id="jcart"><?php $jcart->display_cart();?></div>
+    </div>
+    <!--END OF CART-->
+            <!--HEADER-->
+          <div id=header>
+            <div class="header_cart">
+           
+                <div id="logo">
+                    <a href="index.php"><img src="../img/logo.png"></a>
+                </div>
+        <!--END LOGO-->
+            </div>
+          </div>
+          
+          <div id="nav">
+              <!--SEARCH-->
+              <form method="get" action="search">
+                  <input type="text" value placeholder="Search Store" class="field" id="q">
+              </form>
+              <!--END SEARCH-->
+    <!--HEADER-->
+        <?php include'nav.php';?>
+        </div>
+    <!--END OF HEADER-->
             <!--MAIN-->
               <div id="main">
               <h2><?php echo $row["Product_Name"]; ?></h2>

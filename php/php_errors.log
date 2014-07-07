@@ -1,0 +1,72 @@
+[07-Jul-2014 13:48:13] PHP Notice:  A session had already been started - ignoring session_start() in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php on line 11
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. session_start() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:11
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-item-id in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 281
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-item-name in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 282
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-item-price in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 283
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-item-qty in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 284
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-item-url in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 285
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartToken in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 288
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: my-add-button in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 310
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartUpdate in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 327
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartUpdateCart in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 335
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartCheckout in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 335
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartRemove in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 348
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: jcartEmpty in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 353
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined index: quantityError in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 395
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined variable: src in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 548
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined variable: src in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 555
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined variable: src in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 574
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
+[07-Jul-2014 13:48:13] PHP Notice:  Undefined variable: disablePaypalCheckout in /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/jcart/jcart.php on line 574
+[07-Jul-2014 13:48:13] PHP Stack trace:
+[07-Jul-2014 13:48:13] PHP   1. {main}() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:0
+[07-Jul-2014 13:48:13] PHP   2. Jcart->display_cart() /var/lib/stickshift/539889994382ec19d0000096/app-root/data/886664/php/jcart-1.3/checkout.php:34
