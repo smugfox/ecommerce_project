@@ -36,8 +36,12 @@ session_start();
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/galaxy_product_description.css" />
         <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
+        <link rel="stylesheet" href="../css/lightbox.css" />
         <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
+        <script src="../js/jquery-1.11.0.min.js"></script>
+        <script src="../js/lightbox.min.js"></script>
     </head>
+    <body>
         <!--CONTAINER-->
         <div id="container"> 
     <!--CART-->
@@ -58,8 +62,10 @@ session_start();
           
           <div id="nav">
               <!--SEARCH-->
-              <form method="get" action="search">
-                  <input type="text" value placeholder="Search Store" class="field" id="q">
+              
+              <form method="POST" action="results.php">
+                  <input type="text" name="search" class="field" id="q">
+                  <input type="submit" value="Submit" name="submit">
               </form>
               <!--END SEARCH-->
     <!--HEADER-->
@@ -72,7 +78,8 @@ session_start();
                 <div id="primary">
                  <div class="galaxy_description">
                    <div class="picture_image">
-                    <img src="../img/<?php echo $row["Image"];?>">
+                   <a href="../img/<?php echo $row["Image"];?>" data-lightbox="image-1" data-title=<?php echo $row["Product_Name"]; ?>><img src="../img/<?php echo $row["Image"];?>"></a>
+                    
                    </div>
                  <div class="price">
                    <h2>$<?php echo $row["Price"]; ?></h2>
@@ -80,7 +87,7 @@ session_start();
                   </div>
                 </div>
                 
-                <div id="jcart">
+               
                 
                   	<form method="post" action="" class="jcart">
 					<fieldset>
@@ -101,7 +108,7 @@ session_start();
 						<input type="submit" name="my-add-button" value="add to cart" class="button" />
 					</fieldset>
 				    </form>      
-                </div>
+               
                 
               </div>
               <!--END MAIN-->

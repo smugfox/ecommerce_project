@@ -29,8 +29,10 @@ http://conceptlogic.com/jcart/
 
 #jcart-subtotal { display:block; }
 #jcart-subtotal strong {  }
-
-#jcart-buttons input { padding:2px; margin:2px; }
+#jcart-buttons {
+    display:none;
+}
+/*#jcart-buttons input { padding:2px; margin:2px; } */
 
 #jcart-checkout { float:right; padding:2px; }
 

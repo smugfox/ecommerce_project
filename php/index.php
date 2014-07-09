@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
     <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
     <script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+    
     </head>
     <body>
         <!--CONTAINER-->
@@ -45,7 +48,7 @@
           <div id="nav">
               <!--SEARCH-->
               
-              <form method="POST" action="search.php">
+              <form method="POST" action="results.php">
                   <input type="text" name="search" class="field" id="q">
                   <input type="submit" value="Submit" name="submit">
               </form>
@@ -56,8 +59,11 @@
     <!--END OF NAV-->
     
     <!--SLIDER-->
-    <div id=slider>
-        <img src="../img/scrolling.gif">
+    <div id=slideshow>
+        <div><img src="../img/slideshow/holmberg2_slideshow.jpg"></div>
+        <div><img src="../img/slideshow/Leo_triplet_slideshow.jpg"></div>
+        <div><img src="../img/slideshow/Messier_82_slideshow.jpg"></div>
+        <div><img src="../img/slideshow/NGC_3314_slideshow.jpg"></div>
     </div>
     <!--END OF SLIDER-->
 

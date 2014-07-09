@@ -4,11 +4,11 @@
     session_start();
 ?>
 <?php
-
-    $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
-    $result = mysqli_query($con,"SELECT * FROM Customers where ID = '" . $_SESSION['ID'] . "';");
-    $row = mysqli_fetch_array($result);
     
+    $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
+    $result = mysqli_query($con,"SELECT * FROM Customers where Email = '" . $_SESSION['my_email_address'] . "';");
+    $row = mysqli_fetch_array($result);
+ 
     // Check connection
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -47,8 +47,10 @@
           
           <div id="nav">
               <!--SEARCH-->
-              <form method="get" action="search">
-                  <input type="text" value placeholder="Search Store" class="field" id="q">
+              
+              <form method="POST" action="results.php">
+                  <input type="text" name="search" class="field" id="q">
+                  <input type="submit" value="Submit" name="submit">
               </form>
               <!--END SEARCH-->
     <!--NAV-->
@@ -67,7 +69,7 @@
                     if (isset($_SESSION['my_email_address'])){
                         $my_email_address = $_SESSION['my_email_address'];
                         echo "<p>Hi <strong>" . $row["First_Name"] . "</strong>! <br/></p>";
-                        echo "<p>Hi <strong>" . $my_email_address . "</strong>! <br/></p>";
+                        
                         echo "<p>This is the Members Area. Notice 'menu' has changed since user session exists. Click 'Log Out' to destroy session! </br></p>";
                     }
                     else
