@@ -33,8 +33,10 @@ session_start();
 
 			<div id="content">
 				<div id="jcart"><?php $jcart->display_cart();?></div>
-
-				<p><a href="index.php">&larr; Continue shopping</a></p>
+                 <form name="input" action="input_order.php" method="post">
+                 	<input type="submit" value="Submit">
+                 </form>
+					<p><a href="index.php">&larr; Continue shopping</a></p>
 
 				<?php
 					//echo '<pre>';

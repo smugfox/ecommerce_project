@@ -20,9 +20,9 @@ session_start();
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-
+ 
     $result=mysqli_query($con,"SELECT * FROM Customers WHERE Email='" . $my_email_address . "' and Password='" . $mypassword . "';");
-
+    $row = mysqli_fetch_array($result);
     // Mysql_num_row is counting table row
     $count=mysqli_num_rows($result);
     //$count = $result->num_rows;
@@ -32,6 +32,7 @@ session_start();
     // If result matched $my_email_address and $mypassword, table row must be 1 row
     if($count==1){
         $_SESSION['my_email_address'] = $my_email_address;
+        $_SESSION['CustomerID'] = $row['ID'];
         // Register $my_email_address, $mypassword and redirect to file "login_success.php"
         //session_register("my_email_address");
         //session_register("mypassword"); 
