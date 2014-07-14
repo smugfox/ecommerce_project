@@ -9,7 +9,7 @@
     $zip = $_POST["zip"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-
+    $hashedPassword = crypt($password,'saltkey');
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
 
     // Check connection
@@ -26,7 +26,7 @@ Your email address is: <?php echo $_POST["email"]; ?>
 <?php
 
 $sql = "INSERT INTO Customers (First_Name, Last_Name, Address, City, State, Zip, Email, Password) 
-         Values ('$firstname','$lastname','$address','$city','$state','$zip','$email','$password');";
+         Values ('$firstname','$lastname','$address','$city','$state','$zip','$email','$hashedPassword');";
  
  if(!mysqli_query($con, $sql)) {
     die('Error: ' . mysqli_error($con));

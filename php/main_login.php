@@ -16,12 +16,12 @@ session_start();
 <tr>
 <td width="78">Email Address</td>
 <td width="6">:</td>
-<td width="294"><input name="my_email_address" type="text" id="my_email_address"></td>
+<td width="294"><input name="email" type="text" id="email"></td>
 </tr>
 <tr>
 <td>Password</td>
 <td>:</td>
-<td><input name="mypassword" type="text" id="mypassword"></td>
+<td><input name="password" type="text" id="password"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>

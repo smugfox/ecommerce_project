@@ -1,5 +1,5 @@
               <?php
-                 if (isset($_SESSION['my_email_address'])){
+                 if (isset($_SESSION['email'])){
                  echo "
               <ul>
                   <li>

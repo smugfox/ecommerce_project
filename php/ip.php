@@ -1,0 +1,1 @@
+$ip= getenv("REMOTE_ADDR");

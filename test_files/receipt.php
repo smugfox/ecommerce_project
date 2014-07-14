@@ -7,20 +7,14 @@
     
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
     
-    $result = mysqli_query($con,"SELECT c.*, o.*, i.*, p.* 
-    FROM Customers c LEFT JOIN Orders o ON c.ID = Customer_ID 
-    LEFT JOIN Items i ON i.Orders_ID = o.ID 
-    INNER JOIN Products p ON i.Products_ID = p.ID
-    WHERE c.Email = '" . $_SESSION['email'] . "';");
+    $result = mysqli_query($con,"SELECT * FROM Customers where Email = '" . $_SESSION['email'] . "';");
     $row = mysqli_fetch_array($result);
     
-    // $result_receipt = mysqli_query($con, "SELECT o.ID, c.First_Name, c.Last_Name, o.Order_Date FROM Orders o INNER JOIN Customers c ON o.ID=c.ID;");
-    // $row_receipt = mysqli_fetch_array($result_receipt);
+    $result_receipt = mysqli_query($con, "SELECT o.ID, c.First_Name, c.Last_Name, o.Order_Date FROM Orders o INNER JOIN Customers c ON o.ID=c.ID;");
+    $row_receipt = mysqli_fetch_array($result_receipt);
     
-    // $result_product = mysqli_query($con, "SELECT i.ID, i.Product_Quantity, p.Product_Name, p.Price FROM Items i INNER JOIN Products p ON i.ID=p.ID;");
-    // $row_product = mysqli_fetch_array($result_product);
-    
-    
+    $result_product = mysqli_query($con, "SELECT i.ID, i.Product_Quantity, p.Product_Name, p.Price FROM Items i INNER JOIN Products p ON i.ID=p.ID;");
+    $row_product = mysqli_fetch_array($result_product);
     // Check connection
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -79,13 +73,9 @@
                     //3.1.4 if the user is logged in Greets the user with message
                     if (isset($_SESSION['email'])){
                         $email = $_SESSION['email'];
-                        //$row = mysqli_fetch_array($result)
-                    
-                        echo "<p>Hi <strong>" . $row["First_Name"] . "</strong>! <br/></p>";
-                        echo "<p><h1>Receipt</h1></p>";
-                        while($row = mysqli_fetch_array($result)) {
-
-                            echo    "<table>
+                        
+                            echo "<p><h1>Receipt</h1></p>
+                                <table>
                                     <tr>
                                       <th>Order ID</th>
                                       <th>First name</th>
@@ -96,23 +86,22 @@
                                       <th>Price</th>
                                     </tr>
                                     <tr>
-                                      <td>".$row["ID"]."</td>
+                                      <td>".$row_receipt["ID"]."</td>
                                       <td>".$row["First_Name"]."</td>
                                       <td>".$row["Last_Name"]."</td>
-                                      <td>".$row["Order_Date"]."</td>
-                                      <td>".$row["Product_Name"]."</td>
-                                      <td>".$row["Product_Quantity"]."</td>
-                                      <td>".$row["Price"]."</td>
+                                      <td>".$row_receipt["Order_Date"]."</td>
+                                      <td>".$row_product["Product_Name"]."</td>
+                                      <td>".$row_product["Product_Quantity"]."</td>
+                                      <td>".$row_product["Price"]."</td>
                                     </tr>
                         
                                </table>";
-                        }
-                        
                     }
                     else
                     {
                         //3.2 Redirect user back to login.php
                         header("location:index.php");
+                       
                     }
                 ?>
                 </div>
@@ -128,4 +117,4 @@
     </body>
 </html>
 
-<?php mysqli_close($con); ?>
+<?php //mysqli_close($con); ?>

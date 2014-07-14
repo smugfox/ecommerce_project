@@ -16,11 +16,11 @@ session_start();
     }
 
     $sql_order_results = "INSERT INTO Orders (Customer_ID, Order_Date, Order_Status) VALUES (". $_SESSION['CustomerID'] .", Now(),'Complete')";
-    // echo " results " . $sql_order_results . "<br>";
+    //echo " results " . $sql_order_results . "<br>";
     $result=mysqli_query($con,$sql_order_results);
     $orders_id = mysqli_insert_id($con);
-    // echo "orders: " . $orders_id . "<br>";
-    // echo " Order results " . $results . "<br>" . "ID" . $orders_id;
+    //echo "orders: " . $orders_id . "<br>";
+    //echo " Order results " . $results . "<br>" . "ID " . $orders_id . "<br>";
     foreach($jcart->get_contents() as $item) {
         echo $item['id']; //gets the item's ID
         echo $item['name']; //gets the item's name
@@ -33,10 +33,10 @@ session_start();
         // //$count = $result->num_rows;
         $sql_items_results = "INSERT INTO Items (Product_Quantity, Orders_ID, Products_ID) VALUES (". $item['qty'].", ". $orders_id .", ". $item['id'].")";
         $items=mysqli_query($con,$sql_items_results);
-        echo " items " . $sql_items_results;
+        //echo " items " . $sql_items_results;
         $update_product_qty = mysqli_query($con,"UPDATE Products SET ID = ID - 1 WHERE ID = ".$item['id']);
         
-
+        
     }
         header("location:order_success.php");
  

@@ -12,6 +12,10 @@ a {
     text-decoration:none;
 }
 
+table, th, td{
+    border: 1px solid white ;
+}
+
 #container {
     width:1020px;
     margin:auto;
