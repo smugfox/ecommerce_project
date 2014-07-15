@@ -23,7 +23,9 @@ session_start();
         $productID = $_SESSION['ID'];
       }
       
-    $result = mysqli_query($con,"SELECT * FROM Products where ID = '" . $productID . "';");
+    $result = mysqli_query($con,"SELECT *, IF(p.Quantity - i.Product_Quantity IS NULL,p.Quantity,p.Quantity - i.Product_Quantity) 
+                                 AS Quantity_Available FROM Products p LEFT JOIN Items i ON p.ID = i.Products_ID 
+                                 where p.ID = '" . $productID . "'; ");
     $row = mysqli_fetch_array($result);
     
 ?>
@@ -101,7 +103,11 @@ session_start();
 							<li><strong><?php echo $row["Product_Name"]; ?></strong></li>
 							<li>Price: $<?php echo $row["Price"]; ?></li>
 							<li>
-								<label>Qty: <input type="text" name="my-item-qty" value="1" size="3" /></label>
+								<label>Qty: <input type="text" name="my-item-qty" value="<?php echo $row['Quantity_Available']; ?>" size="3" 
+								<?php if($row['Quantity_Available'] <= 0) {
+								        echo " DISABLED ";
+								}
+								?>/></label>
 							</li>
 						</ul>
 

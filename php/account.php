@@ -14,13 +14,6 @@
     WHERE c.Email = '" . $_SESSION['email'] . "';");
     $row = mysqli_fetch_array($result);
     
-    // $result_receipt = mysqli_query($con, "SELECT o.ID, c.First_Name, c.Last_Name, o.Order_Date FROM Orders o INNER JOIN Customers c ON o.ID=c.ID;");
-    // $row_receipt = mysqli_fetch_array($result_receipt);
-    
-    // $result_product = mysqli_query($con, "SELECT i.ID, i.Product_Quantity, p.Product_Name, p.Price FROM Items i INNER JOIN Products p ON i.ID=p.ID;");
-    // $row_product = mysqli_fetch_array($result_product);
-    
-    
     // Check connection
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -79,11 +72,11 @@
                     //3.1.4 if the user is logged in Greets the user with message
                     if (isset($_SESSION['email'])){
                         $email = $_SESSION['email'];
-                        //$row = mysqli_fetch_array($result)
+                        
                     
-                        echo "<p>Hi <strong>" . $row["First_Name"] . "</strong>! <br/></p>";
+                        echo "<p>Hi <strong>" . $row["First_Name"] . " " . $row['Last_Name'] ."</strong>!<br/></p>";
                         echo "<p><h1>Receipt</h1></p>";
-                        while($row = mysqli_fetch_array($result)) {
+                        while($row) {
 
                             echo    "<table>
                                     <tr>
@@ -106,6 +99,7 @@
                                     </tr>
                         
                                </table>";
+                               $row = mysqli_fetch_array($result);
                         }
                         
                     }

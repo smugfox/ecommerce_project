@@ -1,5 +1,5 @@
 INSERT into Products (Product_Name, Product_Description, Quantity, Price,Image)
-Values('Antennae Galaxies','The galaxies — also known as NGC 4038 and NGC 4039 are locked in a deadly embrace. Once normal, sedate spiral galaxies like the Milky Way','2','7800','arp18.jpg');
+Values('Antennae Galaxies','The galaxies — also known as NGC 4038 and NGC 4039 are locked in a deadly embrace. Once normal, sedate spiral galaxies like the Milky Way','1','7800','arp18.jpg');
 
 INSERT into Products (Product_Name, Product_Description, Quantity, Price,Image)
 Values('Messier 77','Messier 77, a galaxy in the constellation of Cetus, some 45 million light-years away from us. The streaks of red and blue in the image highlight pockets of star formation along the pinwheeling arms, with dark dust lanes stretching across the galaxy’s starry centre. The galaxy belongs to a class of galaxies known as Seyfert galaxies, which have highly ionised gas surrounding an intensely active centre.','1','10000','Messier_77.jpg');
