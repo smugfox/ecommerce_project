@@ -1,16 +1,10 @@
 <?php
-
-// jCart v1.3
-// http://conceptlogic.com/jcart/
-
-// This file demonstrates a basic checkout page
-
-// If your page calls session_start() be sure to include jcart.php first
 include_once('jcart-1.3/jcart/jcart.php');
-
 
 session_start();
 ?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 

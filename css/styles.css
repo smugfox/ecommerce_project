@@ -57,13 +57,13 @@ a {
     background-color:#15191b;
 }
 
-#nav form {
+/*#nav form{
     border:none;
     margin-right:0;
     float:right;
     margin-top:20px;
 }
-
+*/
 #nav ul {
     width:745px;
     padding:0;
@@ -78,6 +78,31 @@ a {
 
 #nav ul li a {
     color:#fff;
+}
+
+#go {
+    width:18px;
+    height:18px;
+    padding:1px;
+    float:right;
+    margin-top:20px;
+    padding:0;
+    background-color:#B0C1C7;
+}
+
+#q {
+    margin-left:0;
+    border:none;
+    margin-right:0;
+    float:right;
+    margin-top:20px;
+    border:none;
+    background-color:#B0C1C7;
+}
+
+::-webkit-input-placeholder {
+   margin-left:2px;
+   color: #000;
 }
 
 .home {

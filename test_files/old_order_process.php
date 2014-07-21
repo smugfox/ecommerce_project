@@ -20,10 +20,6 @@ session_start();
     $result=mysqli_query($con,$sql_order_results);
     $orders_id = mysqli_insert_id($con);
     
-        
-        echo "<br />";echo "<br />";echo "<br />";
-        var_dump($jcart->get_contents());
-        echo "<br />";echo "<br />";echo "<br />";
     
     foreach($jcart->get_contents() as $item) {
         echo "Item ID: ".$item['id'] . "<br>"; //gets the item's ID
@@ -40,6 +36,6 @@ session_start();
         $items=mysqli_query($con,$sql_items_results);
         
     }
-        header("location:order_success.php");
-      
+        // header("location:order_success.php");
+      echo "results " . $sql_items_results;
 ?>

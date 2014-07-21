@@ -4,9 +4,9 @@ include_once('jcart-1.3/jcart/jcart.php');
 session_start();
 ?>
 
-<!-- PHP PROFILE WHILE LOOP -->
 <?php
-
+    // Connect to server and select databse.
+    
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
     
     // Check connection
@@ -23,7 +23,8 @@ session_start();
         $productID = $_SESSION['ID'];
       }
       
-    $result = mysqli_query($con,"SELECT *, IF(p.Quantity - i.Product_Quantity IS NULL,p.Quantity,p.Quantity - i.Product_Quantity) 
+    $result = mysqli_query($con,"SELECT p.ID, p.Product_Name, p.Product_Description, p.Price, p.Image, IF
+                                (p.Quantity - i.Product_Quantity IS NULL,p.Quantity,p.Quantity - i.Product_Quantity) 
                                  AS Quantity_Available FROM Products p LEFT JOIN Items i ON p.ID = i.Products_ID 
                                  where p.ID = '" . $productID . "'; ");
     $row = mysqli_fetch_array($result);
@@ -101,6 +102,7 @@ session_start();
 
 						<ul>
 							<li><strong><?php echo $row["Product_Name"]; ?></strong></li>
+							<li><strong>Item ID <?php echo $row['ID'];?></strong></li>
 							<li>Price: $<?php echo $row["Price"]; ?></li>
 							<li>
 								<label>Qty: <input type="text" name="my-item-qty" value="<?php echo $row['Quantity_Available']; ?>" size="3" 
@@ -111,7 +113,12 @@ session_start();
 							</li>
 						</ul>
 
-						<input type="submit" name="my-add-button" value="add to cart" class="button" />
+						<input type="submit" name="my-add-button" value="add to cart" class="button" 
+						<?php if($row['Quantity_Available'] <= 0) {
+								        echo " DISABLED ";
+								}
+								?>
+								/>
 					</fieldset>
 				    </form>      
                

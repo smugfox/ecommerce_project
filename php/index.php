@@ -4,7 +4,8 @@
     session_start();
 ?>
 <?php
-
+    // Connect to server and select databse.
+    
     $con=mysqli_connect("127.13.131.1","smugfox","","eshop");
 
     // Check connection
@@ -49,8 +50,9 @@
               <!--SEARCH-->
               
               <form method="POST" action="results.php">
-                  <input type="text" name="search" class="field" id="q">
-                  <input type="submit" value="Submit" name="submit">
+                  <input type="text" name="search" class="field" id="q" placeholder="Search Store">
+                  <input type="image" value="Submit" name="submit" id="go" src="../img/icon_search.png">
+                  
               </form>
               <!--END SEARCH-->
     <!--NAV-->

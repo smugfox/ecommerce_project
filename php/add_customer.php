@@ -32,7 +32,7 @@ $sql = "INSERT INTO Customers (First_Name, Last_Name, Address, City, State, Zip,
     die('Error: ' . mysqli_error($con));
  }
  
- echo "Inserted Record!";
+ header("location:index.php");
  
  mysqli_close($con);
 

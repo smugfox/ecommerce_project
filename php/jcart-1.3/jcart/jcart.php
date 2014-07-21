@@ -85,7 +85,7 @@ class Jcart {
 			}
 			// This is a new item
 			else {
-				$this->items[]     = $id;
+				$this->items[$id]     = $id;
 				$this->names[$id]  = $name;
 				$this->prices[$id] = $price;
 				$this->qtys[$id]   = $qty;
@@ -478,7 +478,7 @@ class Jcart {
 		echo tab(4) . "<thead>\n";
 		echo tab(5) . "<tr>\n";
 		echo tab(6) . "<th colspan='3'>\n";
-		echo tab(7) . "<strong id='jcart-title'>{$config['text']['cartTitle']}</strong> ($this->itemCount $itemsText)\n";
+		//echo tab(7) . "$this->itemCount $itemsText\n";
 		echo tab(6) . "</th>\n";
 		echo tab(5) . "</tr>". "\n";
 		echo tab(4) . "</thead>\n";
@@ -497,7 +497,7 @@ class Jcart {
 			echo tab(7) . "<input type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='jcart-button' value='{$config['text']['checkout']}' />\n";
 		}
 
-		echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['subtotal']}: <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
+		echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['']} <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
 		echo tab(6) . "</th>\n";
 		echo tab(5) . "</tr>\n";
 		echo tab(4) . "</tfoot>\n";			
@@ -509,32 +509,32 @@ class Jcart {
 
 			// Display line items
 			foreach($this->get_contents() as $item)	{
-				echo tab(5) . "<tr>\n";
-				echo tab(6) . "<td class='jcart-item-qty'>\n";
-				echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
-				echo tab(7) . "<input id='jcartItemQty-{$item['id']}' name='jcartItemQty[]' size='2' type='text' value='{$item['qty']}' />\n";
-				echo tab(6) . "</td>\n";
-				echo tab(6) . "<td class='jcart-item-name'>\n";
+				//echo tab(5) . "<tr>\n";
+				//echo tab(6) . "<td class='jcart-item-qty'>\n";
+				//echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
+				//echo tab(7) . "<input id='jcartItemQty-{$item['id']}' name='jcartItemQty[]' size='2' type='text' value='{$item['qty']}' />\n";
+				//echo tab(6) . "</td>\n";
+				//echo tab(6) . "<td class='jcart-item-name'>\n";
 
 				if ($item['url']) {
 					echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
 				}
 				else {
-					echo tab(7) . $item['name'] . "\n";
+					//echo tab(7) . $item['name'] . "\n";
 				}
-				echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
-				echo tab(6) . "</td>\n";
-				echo tab(6) . "<td class='jcart-item-price'>\n";
-				echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
-				echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
-				echo tab(6) . "</td>\n";
-				echo tab(5) . "</tr>\n";
+				//echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
+				//echo tab(6) . "</td>\n";
+				//echo tab(6) . "<td class='jcart-item-price'>\n";
+				//echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
+				//echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
+				//echo tab(6) . "</td>\n";
+				//echo tab(5) . "</tr>\n";
 			}
 		}
 
 		// The cart is empty
 		else {
-			echo tab(5) . "<tr><td id='jcart-empty' colspan='3'>{$config['text']['emptyMessage']}</td></tr>\n";
+			//echo tab(5) . "<tr><td id='jcart-empty' colspan='3'>{$config['text']['emptyMessage']}</td></tr>\n";
 		}
 		echo tab(4) . "</tbody>\n";
 		echo tab(3) . "</table>\n\n";
