@@ -2,12 +2,11 @@
               <div id="footer">
                 <div id="footer_left">
                     <h3>About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Donec egestas purus malesuada sem feugiat, et mollis tortor 
-                    pharetra. Quisque imperdiet ut diam vel ullamcorper</p>
-                    <p>Phone: 555-555-5555
+                    <p>Galaxy Warehouse opened on 7/21/2014 as the first online store dedicated exclusively 
+                       to selling only the most premium Galaxies. Often imitated, never duplicated.</p>
+                    <p>Phone: 415-412-5931
                     <br>
-                       Email: test@test.com    
+                       <a href="mailto:test@test.com">Email: test@test.com</a>   
                     </p>
                 </div>
                 <div id="footer_mid">
@@ -18,5 +17,9 @@
                         <li class="mastercard"><img src="../img/mastercard.png"></li>
                         <li class="ae"><img src="../img/ax.png"></li>
                     </ul>
+                    <br>
+                    <p>We accept PayPal, Visa, Mastercard & Amex.</p>
+                    <p style="margin-top: 0px;">We ship all around the world every day!</p>
                 </div>
               </div>
+            

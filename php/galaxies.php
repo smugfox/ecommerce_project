@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Eshop</title>
+        <title>Galaxies</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/galaxies.css" />
         <link rel="stylesheet" type="text/css" media="screen, projection" href="jcart-1.3/jcart/css/jcart.css" />
@@ -58,7 +58,7 @@
               
             <!--MAIN-->
               <div id="main">
-                <h2>Products</h2>
+                <h2>Galaxies</h2>
                 <!--PRIMARY-->
                 <div id="cell_div">
                     <!--CONTENT-->

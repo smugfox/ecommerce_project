@@ -25,6 +25,7 @@ a {
     height: 90px;
     float:right;
     margin-right:30px;
+    
 }
 
 #header {
@@ -77,7 +78,7 @@ a {
 }
 
 #nav ul li a {
-    color:#fff;
+    color:#b0c1c7;
 }
 
 #reg_form {
@@ -88,6 +89,9 @@ a {
    font-size:18px;
    margin-bottom: 2px;
    margin-top: 2px;
+}
+a {
+    color:#fe6f61;
 }
 a:visited {
     color:#fe6f61;
@@ -115,7 +119,7 @@ input.button {
     padding:1px;
     float:right;
     margin-top:20px;
-    padding:0;
+    padding:6px;
     background-color:#B0C1C7;
 }
 
@@ -127,6 +131,7 @@ input.button {
     margin-top:20px;
     border:none;
     background-color:#B0C1C7;
+    height:28px;
 }
 
 ::-webkit-input-placeholder {
@@ -140,6 +145,7 @@ input.button {
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
 
 .products {
@@ -147,7 +153,8 @@ input.button {
     height:20px;
     padding:22px 34px;
     float:left;
-    background-color:#15191b;   
+    background-color:#15191b; 
+    color:#1f2527;
 }
 
 .login {
@@ -156,6 +163,7 @@ input.button {
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
 
 .sign_up {
@@ -164,6 +172,7 @@ input.button {
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
 
 .logout {
@@ -172,6 +181,7 @@ input.button {
     padding:22px 34px;
     float:left;
     background-color:#15191b; 
+    color:#1f2527;
 }
 
 .account {
@@ -180,6 +190,7 @@ input.button {
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
 
 #slideshow {
@@ -233,9 +244,13 @@ input.button {
     width:300px;
     height: 100px;
     margin-top:0;
+    background-color:#1f2527;
+}
+.cell_description_box h4 {
+    color:#fff;
 }
 .cell_description_box:hover {
-    background-color: #A3D6E6;
+    background-color: #fe6f61;
 }
 
 .description {
@@ -251,12 +266,18 @@ input.button {
 }
 
 .description p {
+    font-weight:bold;
     float:right;
     margin-top:40px;
     color: #fff;
     padding: 10px;
-    background-color:#000;
+    background-color:#fe6f61;
     border-radius:8px;
+    margin-right: 5px;
+}
+
+.description p:hover {
+    background-color:#fff;
 }
 
 #side {
@@ -264,13 +285,16 @@ input.button {
     height:500px;
     float:left;
     display:block;
+    background-color:#1f2527;
 }
 
 #footer {
-    width:960px;
-    height:248px;
+    width:910px;
+    height:212px;
     margin:auto;
     display: block;
+    background-color:#1f2527;
+    padding: 28px 15px 8px 15px;
 }
 
 #footer_left {
@@ -280,6 +304,7 @@ input.button {
 }
 
 #footer_left h3 {
+    color:#fff;
     margin: 0 0 22px 0;
 }
 
@@ -293,7 +318,23 @@ input.button {
     float:left;
 }
 
+#footer_mid h3 {
+    color:#fff;
+    margin: 0 0 22px 0;
+}
+
+#footer_mid ul {
+    margin: 0 0 25px 0;
+    padding-left:0;
+}
+
 #footer_mid ul li {
     float:left;
     margin:0 10px 0 0;
 }
+
+#footer_mid p {
+    margin-top: 30px;
+    margin-bottom:2px;
+}
+
