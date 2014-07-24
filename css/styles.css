@@ -1,4 +1,5 @@
 body {
+    
     background-color: #15191b;
     color:#ccc;
 }
@@ -17,7 +18,7 @@ a {
 #container {
     width:1020px;
     margin:auto;
-    background-color:#070C09;
+    background-color:#000;
 }
 
 #sidebar {
@@ -38,7 +39,7 @@ a {
 
 #logo {
     width:960px;
-    height: 100px;
+    height: 300px;
     margin:auto;
     display:block;
 }
@@ -336,5 +337,12 @@ input.button {
 #footer_mid p {
     margin-top: 30px;
     margin-bottom:2px;
+}
+
+.copyright {
+    
+    width:910px;
+    height:30px;
+    margin-top: 10px;
 }
 

@@ -472,6 +472,330 @@ class Jcart {
 		// Display the cart header
 		echo tab(1) . "$errorMessage\n";
 		echo tab(1) . "<form method='post' action='$checkout'>\n";
+		//echo tab(2) . "<fieldset>\n";
+		echo tab(3) . "<input type='hidden' name='jcartToken' value='{$_SESSION['jcartToken']}' />\n";
+	    echo tab(3) . "<table border='1'>\n";
+		echo tab(4) . "<thead>\n";
+		echo tab(5) . "<tr>\n";
+		echo tab(6) . "<th colspan='3'>\n";
+		echo tab(7) . "$this->itemCount $itemsText\n";
+		echo tab(6) . "</th>\n";
+		echo tab(5) . "</tr>". "\n";
+		echo tab(4) . "</thead>\n";
+		
+		// Display the cart footer
+		echo tab(4) . "<tfoot>\n";
+		echo tab(5) . "<tr>\n";
+		echo tab(6) . "<th colspan='3'>\n";
+
+		// If this is the checkout hide the cart checkout button
+		if ($isCheckout !== true) {
+			if ($config['button']['checkout']) {
+				$inputType = "image";
+				$src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkout']}' title='' ";
+			}
+			echo tab(7) . "<input type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='jcart-button' value='{$config['text']['checkout']}' />\n";
+		}
+
+		echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['']} <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
+		echo tab(6) . "</th>\n";
+		echo tab(5) . "</tr>\n";
+		echo tab(4) . "</tfoot>\n";			
+		
+		echo tab(4) . "<tbody>\n";
+
+		// If any items in the cart
+		if($this->itemCount > 0) {
+
+			// Display line items
+			foreach($this->get_contents() as $item)	{
+				echo tab(5) . "<tr>\n";
+				echo tab(6) . "<td class='jcart-item-qty'>\n";
+				echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
+				echo tab(7) . "<input id='jcartItemQty-{$item['id']}' name='jcartItemQty[]' size='2' type='text' value='{$item['qty']}' />\n";
+				echo tab(6) . "</td>\n";
+				echo tab(6) . "<td class='jcart-item-name'>\n";
+
+				if ($item['url']) {
+					echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
+				}
+				else {
+					echo tab(7) . $item['name'] . "\n";
+				}
+				echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
+				echo tab(6) . "</td>\n";
+				echo tab(6) . "<td class='jcart-item-price'>\n";
+				echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
+				echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
+				echo tab(6) . "</td>\n";
+				echo tab(5) . "</tr>\n";
+			}
+		}
+
+		// The cart is empty
+		else {
+			echo tab(5) . "<tr><td id='jcart-empty' colspan='3'>{$config['text']['emptyMessage']}</td></tr>\n";
+		}
+		echo tab(4) . "</tbody>\n";
+		echo tab(3) . "</table>\n\n";
+
+		echo tab(3) . "<div id='jcart-buttons'>\n";
+
+		if ($config['button']['update']) {
+			$inputType = "image";
+			$src = " src='{$config['button']['update']}' alt='{$config['text']['update']}' title='' ";
+		}
+
+		echo tab(4) . "<input type='$inputType' $src name='jcartUpdateCart' value='{$config['text']['update']}' class='jcart-button' />\n";
+
+		if ($config['button']['empty']) {
+			$inputType = "image";
+			$src = " src='{$config['button']['empty']}' alt='{$config['text']['emptyButton']}' title='' ";
+		}
+
+		echo tab(4) . "<input type='$inputType' $src name='jcartEmpty' value='{$config['text']['emptyButton']}' class='jcart-button' />\n";
+		echo tab(3) . "</div>\n";
+
+		// If this is the checkout display the PayPal checkout button
+		if ($isCheckout === true) {
+			// Hidden input allows us to determine if we're on the checkout page
+			// We normally check against request uri but ajax update sets value to relay.php
+			echo tab(3) . "<input type='hidden' id='jcart-is-checkout' name='jcartIsCheckout' value='true' />\n";
+
+			// PayPal checkout button
+			if ($config['button']['checkout'])	{
+				$inputType = "image";
+				$src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkoutPaypal']}' title='' ";
+			}
+
+			if($this->itemCount <= 0) {
+				$disablePaypalCheckout = " disabled='disabled'";
+			}
+
+			//echo tab(3) . "<input type='$inputType' $src id='jcart-paypal-checkout' name='jcartPaypalCheckout' value='{$config['text']['checkoutPaypal']}' $disablePaypalCheckout />\n";
+		}
+
+		echo tab(2) . "</fieldset>\n";
+		echo tab(1) . "</form>\n\n";
+		
+		echo tab(1) . "<div id='jcart-tooltip'></div>\n";
+	}
+	
+	
+		/**
+	* Process and display cart
+	*/
+	public function display_carts() {
+
+		$config = $this->config; 
+		$errorMessage = null;
+
+		// Simplify some config variables
+		$checkout = $config['checkoutPath'];
+		$priceFormat = $config['priceFormat'];
+
+		$id    = $config['item']['id'];
+		$name  = $config['item']['name'];
+		$price = $config['item']['price'];
+		$qty   = $config['item']['qty'];
+		$url   = $config['item']['url'];
+		$add   = $config['item']['add'];
+
+		// Use config values as literal indices for incoming POST values
+		// Values are the HTML name attributes set in config.json
+		$id    = $_POST[$id];
+		$name  = $_POST[$name];
+		$price = $_POST[$price];
+		$qty   = $_POST[$qty];
+		$url   = $_POST[$url];
+
+		// Optional CSRF protection, see: http://conceptlogic.com/jcart/security.php
+		$jcartToken = $_POST['jcartToken'];
+
+		// Only generate unique token once per session
+		if(!$_SESSION['jcartToken']){
+			$_SESSION['jcartToken'] = md5(session_id() . time() . $_SERVER['HTTP_USER_AGENT']);
+		}
+		// If enabled, check submitted token against session token for POST requests
+		if ($config['csrfToken'] === 'true' && $_POST && $jcartToken != $_SESSION['jcartToken']) {
+			$errorMessage = 'Invalid token!' . $jcartToken . ' / ' . $_SESSION['jcartToken'];
+		}
+
+		// Sanitize values for output in the browser
+		$id    = filter_var($id, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);
+		$name  = filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);
+		$url   = filter_var($url, FILTER_SANITIZE_URL);
+
+		// Round the quantity if necessary
+		if($config['decimalPlaces'] === true) {
+			$qty = round($qty, $config['decimalPlaces']);
+		}
+
+		// Add an item
+		if ($_POST[$add]) {
+			$itemAdded = $this->add_item($id, $name, $price, $qty, $url);
+			// If not true the add item function returns the error type
+			if ($itemAdded !== true) {
+				$errorType = $itemAdded;
+				switch($errorType) {
+					case 'qty':
+						$errorMessage = $config['text']['quantityError'];
+						break;
+					case 'price':
+						$errorMessage = $config['text']['priceError'];
+						break;
+				}
+			}
+		}
+
+		// Update a single item
+		if ($_POST['jcartUpdate']) {
+			$itemUpdated = $this->update_item($_POST['itemId'], $_POST['itemQty']);
+			if ($itemUpdated !== true)	{
+				$errorMessage = $config['text']['quantityError'];
+			}
+		}
+
+		// Update all items in the cart
+		if($_POST['jcartUpdateCart'] || $_POST['jcartCheckout'])	{
+			$cartUpdated = $this->update_cart();
+			if ($cartUpdated !== true)	{
+				$errorMessage = $config['text']['quantityError'];
+			}
+		}
+
+		// Remove an item
+		/* After an item is removed, its id stays set in the query string,
+		preventing the same item from being added back to the cart in
+		subsequent POST requests.  As result, it's not enough to check for
+		GET before deleting the item, must also check that this isn't a POST
+		request. */
+		if($_GET['jcartRemove'] && !$_POST) {
+			$this->remove_item($_GET['jcartRemove']);
+		}
+
+		// Empty the cart
+		if($_POST['jcartEmpty']) {
+			$this->empty_cart();
+		}
+
+		// Determine which text to use for the number of items in the cart
+		$itemsText = $config['text']['multipleItems'];
+		if ($this->itemCount == 1) {
+			$itemsText = $config['text']['singleItem'];
+		}
+
+		// Determine if this is the checkout page
+		/* First we check the request uri against the config checkout (set when
+		the visitor first clicks checkout), then check for the hidden input
+		sent with Ajax request (set when visitor has javascript enabled and
+		updates an item quantity). */
+		$isCheckout = strpos(request_uri(), $checkout);
+		if ($isCheckout !== false || $_REQUEST['jcartIsCheckout'] == 'true') {
+			$isCheckout = true;
+		}
+		else {
+			$isCheckout = false;
+		}
+
+		// Overwrite the form action to post to gateway.php instead of posting back to checkout page
+		if ($isCheckout === true) {
+
+			// Sanititze config path
+			$path = filter_var($config['jcartPath'], FILTER_SANITIZE_URL);
+
+			// Trim trailing slash if necessary
+			$path = rtrim($path, '/');
+
+			$checkout = $path . '/gateway.php';
+		}
+
+		// Default input type
+		// Overridden if using button images in config.php
+		$inputType = 'submit';
+
+		// If this error is true the visitor updated the cart from the checkout page using an invalid price format
+		// Passed as a session var since the checkout page uses a header redirect
+		// If passed via GET the query string stays set even after subsequent POST requests
+		if ($_SESSION['quantityError'] === true) {
+			$errorMessage = $config['text']['quantityError'];
+			unset($_SESSION['quantityError']);
+		}
+
+		// Set currency symbol based on config currency code
+		$currencyCode = trim(strtoupper($config['currencyCode']));
+		switch($currencyCode) {
+			case 'EUR':
+				$currencySymbol = '&#128;';
+				break;
+			case 'GBP':
+				$currencySymbol = '&#163;';
+				break;
+			case 'JPY':
+				$currencySymbol = '&#165;';
+				break;
+			case 'CHF':
+				$currencySymbol = 'CHF&nbsp;';
+				break;
+			case 'SEK':
+			case 'DKK':
+			case 'NOK':
+				$currencySymbol = 'Kr&nbsp;';
+				break;
+			case 'PLN':
+				$currencySymbol = 'z&#322;&nbsp;';
+				break;
+			case 'HUF':
+				$currencySymbol = 'Ft&nbsp;';
+				break;
+			case 'CZK':
+				$currencySymbol = 'K&#269;&nbsp;';
+				break;
+			case 'ILS':
+				$currencySymbol = '&#8362;&nbsp;';
+				break;
+			case 'TWD':
+				$currencySymbol = 'NT$';
+				break;
+			case 'THB':
+				$currencySymbol = '&#3647;';
+				break;
+			case 'MYR':
+				$currencySymbol = 'RM';
+				break;
+			case 'PHP':
+				$currencySymbol = 'Php';
+				break;
+			case 'BRL':
+				$currencySymbol = 'R$';
+				break;
+			case 'USD':
+			default:
+				$currencySymbol = '$';
+				break;
+		}
+
+		////////////////////////////////////////////////////////////////////////
+		// Output the cart
+
+		// Return specified number of tabs to improve readability of HTML output
+		function tab($n) {
+			$tabs = null;
+			while ($n > 0) {
+				$tabs .= "\t";
+				--$n;
+			}
+			return $tabs;
+		}
+
+		// If there's an error message wrap it in some HTML
+		if ($errorMessage)	{
+			$errorMessage = "<p id='jcart-error'>$errorMessage</p>";
+		}
+
+		// Display the cart header
+		echo tab(1) . "$errorMessage\n";
+		echo tab(1) . "<form method='post' action='$checkout'>\n";
 		echo tab(2) . "<fieldset>\n";
 		echo tab(3) . "<input type='hidden' name='jcartToken' value='{$_SESSION['jcartToken']}' />\n";
 		echo tab(3) . "<table border='1'>\n";
@@ -509,7 +833,7 @@ class Jcart {
 
 			// Display line items
 			foreach($this->get_contents() as $item)	{
-				//echo tab(5) . "<tr>\n";
+				// echo tab(5) . "<tr>\n";
 				//echo tab(6) . "<td class='jcart-item-qty'>\n";
 				//echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
 				//echo tab(7) . "<input id='jcartItemQty-{$item['id']}' name='jcartItemQty[]' size='2' type='text' value='{$item['qty']}' />\n";
@@ -517,18 +841,18 @@ class Jcart {
 				//echo tab(6) . "<td class='jcart-item-name'>\n";
 
 				if ($item['url']) {
-					echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
+					//echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
 				}
 				else {
 					//echo tab(7) . $item['name'] . "\n";
 				}
-				//echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
-				//echo tab(6) . "</td>\n";
-				//echo tab(6) . "<td class='jcart-item-price'>\n";
-				//echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
-				//echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
-				//echo tab(6) . "</td>\n";
-				//echo tab(5) . "</tr>\n";
+				// echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
+				// echo tab(6) . "</td>\n";
+				// echo tab(6) . "<td class='jcart-item-price'>\n";
+				// echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
+				// echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
+				// echo tab(6) . "</td>\n";
+				// echo tab(5) . "</tr>\n";
 			}
 		}
 
@@ -580,6 +904,9 @@ class Jcart {
 		
 		echo tab(1) . "<div id='jcart-tooltip'></div>\n";
 	}
+	
+	
+	
 }
 
 // Start a new session in case it hasn't already been started on the including page

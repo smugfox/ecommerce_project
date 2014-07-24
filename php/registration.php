@@ -1,6 +1,6 @@
 <?php
 
-    include_once('jcart-1.3/jcart/jcart.php');
+include_once('jcart-1.3/jcart/jcart.php');
 
 session_start();
 ?>
@@ -15,24 +15,21 @@ session_start();
     <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
     <script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/scripts.js"></script>
-    
     </head>
-    
     <body>
-    <!--CONTAINER-->
+        <!--CONTAINER-->
         <div id="container"> 
     <!--CART-->
     <div id="sidebar">
-        <div id="jcart"><?php $jcart->display_cart();?></div>
+        <div id="jcart"><?php $jcart->display_carts();?></div>
     </div>
     <!--END OF CART-->
-    <!--HEADER-->
+            <!--HEADER-->
           <div id=header>
             <div class="header_cart">
            
                 <div id="logo">
-                    <a href="index.php"><img src="../img/logo.png"></a>
+                    <a href="index.php"><img src="../img/logo.jpg"></a>
                 </div>
         <!--END LOGO-->
             </div>

@@ -22,4 +22,8 @@
                     <p style="margin-top: 0px;">We ship all around the world every day!</p>
                 </div>
               </div>
+               <div class="copyright">
+                    
+                    © 2014 Galaxy Warehouse.
+                </div>
             

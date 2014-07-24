@@ -43,7 +43,7 @@
         <div id="container"> 
     <!--CART-->
     <div id="sidebar">
-        <div id="jcart"><?php $jcart->display_cart();?></div>
+        <div id="jcart"><?php $jcart->display_carts();?></div>
     </div>
     <!--END OF CART-->
             <!--HEADER-->
@@ -51,7 +51,7 @@
             <div class="header_cart">
            
                 <div id="logo">
-                    <a href="index.php"><img src="../img/logo.png"></a>
+                    <a href="index.php"><img src="../img/logo.jpg"></a>
                 </div>
         <!--END LOGO-->
             </div>
@@ -59,9 +59,10 @@
           
           <div id="nav">
               <!--SEARCH-->
-              <form method="POST" action="search.php">
-                  <input type="text" name="search" class="field" id="q">
-                  <input type="submit" value="Submit" name="submit">
+              <form method="POST" action="results.php" style="margin-top: 0px;">
+                  <input type="text" name="search" class="field" id="q" placeholder="Search Store">
+                  <input type="image" value="Submit" name="submit" id="go" src="../img/icon_search.png">
+                  
               </form>
               <!--END SEARCH-->
     <!--NAV-->

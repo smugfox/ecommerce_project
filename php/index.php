@@ -32,7 +32,7 @@
         <div id="container"> 
     <!--CART-->
     <div id="sidebar">
-        <div id="jcart"><?php $jcart->display_cart();?></div>
+        <div id="jcart"><?php $jcart->display_carts();?></div>
     </div>
     <!--END OF CART-->
             <!--HEADER-->
@@ -40,7 +40,7 @@
             <div class="header_cart">
            
                 <div id="logo">
-                    <a href="index.php"><img src="../img/logo.png"></a>
+                    <a href="index.php"><img src="../img/logo.jpg"></a>
                 </div>
         <!--END LOGO-->
             </div>

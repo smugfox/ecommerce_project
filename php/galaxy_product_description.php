@@ -49,7 +49,7 @@ session_start();
         <div id="container"> 
     <!--CART-->
     <div id="sidebar">
-        <div id="jcart"><?php $jcart->display_cart();?></div>
+        <div id="jcart"><?php $jcart->display_carts();?></div>
     </div>
     <!--END OF CART-->
             <!--HEADER-->
@@ -57,7 +57,7 @@ session_start();
             <div class="header_cart">
            
                 <div id="logo">
-                    <a href="index.php"><img src="../img/logo.png"></a>
+                    <a href="index.php"><img src="../img/logo.jpg"></a>
                 </div>
         <!--END LOGO-->
             </div>
@@ -66,9 +66,10 @@ session_start();
           <div id="nav">
               <!--SEARCH-->
               
-              <form method="POST" action="results.php">
-                  <input type="text" name="search" class="field" id="q">
-                  <input type="submit" value="Submit" name="submit">
+              <form method="POST" action="results.php" style="margin-top: 0px;">
+                  <input type="text" name="search" class="field" id="q" placeholder="Search Store">
+                  <input type="image" value="Submit" name="submit" id="go" src="../img/icon_search.png">
+                  
               </form>
               <!--END SEARCH-->
     <!--HEADER-->
@@ -76,22 +77,22 @@ session_start();
         </div>
     <!--END OF HEADER-->
             <!--MAIN-->
-              <div id="main">
+            <div id="main">
               <h2><?php echo $row["Product_Name"]; ?></h2>
                 <div id="primary">
                  <div class="galaxy_description">
                    <div class="picture_image">
                    <a href="../img/<?php echo $row["Image"];?>" data-lightbox="image-1" data-title=<?php echo $row["Product_Name"]; ?>><img src="../img/<?php echo $row["Image"];?>"></a>
-                    
                    </div>
-                 <div class="price">
-                   <h2>$<?php echo $row["Price"]; ?></h2>
-                   <p><?php echo $row["Product_Description"]; ?></p>
-                  </div>
-                </div>
+                   
+                   <div class="price">
+                     <h2>$<?php echo $row["Price"]; ?></h2>
+                     <p><?php echo $row["Product_Description"]; ?></p>
+                   </div>
+                 </div>
                 
                
-                
+                <div class="jcart_side">
                   	<form method="post" action="" class="jcart">
 					<fieldset>
 						<input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken'];?>" />
@@ -102,14 +103,14 @@ session_start();
 
 						<ul>
 							<li><strong><?php echo $row["Product_Name"]; ?></strong></li>
-							<li><strong>Item ID <?php echo $row['ID'];?></strong></li>
 							<li>Price: $<?php echo $row["Price"]; ?></li>
 							<li>
 								<label>Qty: <input type="text" name="my-item-qty" value="<?php echo $row['Quantity_Available']; ?>" size="3" 
 								<?php if($row['Quantity_Available'] <= 0) {
 								        echo " DISABLED ";
 								}
-								?>/></label>
+								?>/>
+								</label>
 							</li>
 						</ul>
 
@@ -117,20 +118,18 @@ session_start();
 						<?php if($row['Quantity_Available'] <= 0) {
 								        echo " DISABLED ";
 								}
-								?>
-								/>
+								?>/>
 					</fieldset>
-				    </form>      
-               
-                
-              </div>
+				    </form> 
+            </div> 
+            </div>
               <!--END MAIN-->
-       
-              
+ 
               <!--FOOTER-->
               <?php include'footer.php' ?>
               <!--END OF FOOTER-->
         </div>
+
         <!--END OF CONTAINER-->
     </body>
 </html>

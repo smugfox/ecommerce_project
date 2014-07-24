@@ -35,7 +35,7 @@
         <div id="container"> 
     <!--CART-->
     <div id="sidebar">
-        <div id="jcart"><?php $jcart->display_cart();?></div>
+        <div id="jcart"><?php $jcart->display_carts();?></div>
     </div>
     <!--END OF CART-->
             <!--HEADER-->
@@ -43,7 +43,7 @@
             <div class="header_cart">
            
                 <div id="logo">
-                    <a href="index.php"><img src="../img/logo.png"></a>
+                    <a href="index.php"><img src="../img/logo.jpg"></a>
                 </div>
         <!--END LOGO-->
             </div>
@@ -52,9 +52,10 @@
           <div id="nav">
               <!--SEARCH-->
               
-              <form method="POST" action="results.php">
-                  <input type="text" name="search" class="field" id="q">
-                  <input type="submit" value="Submit" name="submit">
+              <form method="POST" action="results.php" style="margin-top: 0px;">
+                  <input type="text" name="search" class="field" id="q" placeholder="Search Store">
+                  <input type="image" value="Submit" name="submit" id="go" src="../img/icon_search.png">
+                  
               </form>
               <!--END SEARCH-->
     <!--NAV-->
@@ -64,7 +65,7 @@
               
             <!--MAIN-->
               <div id="main">
-                <h2>My Account</h2>
+                <h2 style='padding-left:12px;'>My Account</h2>
                 <!--PRIMARY-->
                 <div id="cell_div">
                     <!--CONTENT-->
@@ -74,11 +75,14 @@
                         $email = $_SESSION['email'];
                         
                     
-                        echo "<p>Hi <strong>" . $row["First_Name"] . " " . $row['Last_Name'] ."</strong>!<br/></p>";
-                        echo "<p><h1>Receipt</h1></p>";
+                        echo "<p style='padding-left:12px;'>Hi <strong>" . $row["First_Name"] . " " . $row['Last_Name'] ."</strong>!<br/>  
+                              Here's a listing of your latest purchases.</p>";
+                        echo "<h3 style='padding-left:12px;'>Receipt</h3>";
+                        
                         while($row) {
+                            echo "<div class='receipt_table' style=' padding-bottom:20px; padding-left: 12px; padding-right: 12px;'>
 
-                            echo    "<table>
+                                   <table style='text-align: center;'>
                                     <tr>
                                       <th>Order ID</th>
                                       <th>First name</th>
@@ -98,7 +102,8 @@
                                       <td>".$row["Price"]."</td>
                                     </tr>
                         
-                               </table>";
+                               </table>
+                               </div>";
                                $row = mysqli_fetch_array($result);
                         }
                         
@@ -109,6 +114,7 @@
                         header("location:index.php");
                     }
                 ?>
+                
                 </div>
               </div>
               <!--END MAIN-->
