@@ -1,58 +1,48 @@
 body {
     background-color: #15191b;
     color:#ccc;
+    font-family: sans-serif;
 }
-
 ul {
     list-style-type: none;
     line-height:20px;
 }
-
 a {
     text-decoration:none;
     color:#fe6f61;
 }
-
 a:visited {
     color:#fe6f61;
 }
-
 #container {
     width:1020px;
     margin:auto;
     background-color:#000;
 }
-
 #sidebar {
     width: 250px;
     height: 90px;
     float:right;
     margin-right:30px;
 }
-
 #header {
-     
     width:960px;
     height:100px;
     margin:auto;
     display:block;
 }
-
 #logo {
     width:960px;
     height: 100px;
     margin:auto;
     display:block;
 }
-
 #logo h1 {
     margin:0;
 }
-
 #logo img {
     width:580px;
 }
-
 #nav {
     width:960px;
     height:67px;
@@ -60,36 +50,30 @@ a:visited {
     display:block;
     background-color:#15191b;
 }
-
 #nav form {
     border:none;
     margin-right:0;
     float:right;
     margin-top:20px;
 }
-
 #nav ul {
     width:745px;
     padding:0;
 }
-
 #nav ul li {
     width:104px;
     height:64px;
     float:left;
     display:block;
 }
-
 #nav ul li a {
-    color:#fff;
+    color:#b0c1c7;
 }
-
 input.reg {
     border:0;
     padding: 5px;
     background-color:#B0C1C7
 }
-
 input.button {
     margin-top:5px;
     background-color:#fe6f61;
@@ -99,7 +83,6 @@ input.button {
     padding:10px;
     border-radius:4px;
 }
-
 #go {
     width:18px;
     height:18px;
@@ -109,7 +92,6 @@ input.button {
     padding:6px;
     background-color:#B0C1C7;
 }
-
 #q {
     margin-left:0;
     border:none;
@@ -120,66 +102,63 @@ input.button {
     background-color:#B0C1C7;
     height:28px;
 }
-
 ::-webkit-input-placeholder {
-   margin-left:2px;
-   color: #000;
+    margin-left:2px;
+    color: #000;
 }
-
 .home {
     width:36px;
     height:20px;
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
-
 .products {
     width:36px;
     height:20px;
     padding:22px 34px;
     float:left;
-    background-color:#15191b;   
+    background-color:#15191b;
+    color:#1f2527;
 }
-
 .login {
     width:66px;
     height:20px;
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
-
 .sign_up {
     width:56px;
     height:20px;
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
-
 .logout {
     width:56px;
     height:20px;
     padding:22px 34px;
     float:left;
-    background-color:#15191b; 
+    background-color:#15191b;
+    color:#1f2527;
 }
-
 .account {
     width:56px;
     height:20px;
     padding:22px 34px;
     float:left;
     background-color:#15191b;
+    color:#1f2527;
 }
-
 #main {
     width: 960px;
     display:table;
     margin:auto;
 }
-
 #primary {
     width:960px;
     float:left;
@@ -187,105 +166,72 @@ input.button {
     margin-bottom: 40px;
 }
 .picture_image {
-   float:left;
+    float:left;
 }
 .picture_image img {
     width:450px;
     height:500px;
 }
-
 .price {
     width:500px;
     float:left;
 }
-
 .price h2 {
     font-size: 30px;
     margin: 0 0 0 40px;
 }
-
 .price p {
     margin: 0 0 0 40px;
-    font-size:25px;
+    font-size:18px;
+    line-height:1.5em;
 }
-
 #footer {
-    width:960px;
-    height:248px;
+    width:910px;
+    height:212px;
     margin:auto;
     display: block;
+    background-color:#1f2527;
+    padding: 28px 15px 8px 15px;
+    font-size:14px;
 }
-
 #footer_left {
     width:280px;
     float:left;
     margin-right:36px;
 }
-
-#footer_left h3 {
-    margin: 0 0 22px 0;
-}
-
-#footer_left p {
-    margin: 0 0 20px 0;
-    height:84px;
-}
-
-#footer_mid {
-    width: 300px;
-    float:left;
-}
-
-#footer_mid ul li {
-    float:left;
-    margin:0 10px 0 0;
-}
-
-#footer_left {
-    width:280px;
-    float:left;
-    margin-right:36px;
-}
-
 #footer_left h3 {
     color:#fff;
     margin: 0 0 22px 0;
 }
-
 #footer_left p {
-    margin: 0 0 20px 0;
+    margin: 0;
     height:84px;
 }
-
 #footer_mid {
     width: 300px;
     float:left;
 }
-
 #footer_mid h3 {
     color:#fff;
     margin: 0 0 22px 0;
 }
-
 #footer_mid ul {
     margin: 0 0 25px 0;
     padding-left:0;
 }
-
 #footer_mid ul li {
     float:left;
     margin:0 10px 0 0;
 }
-
 #footer_mid p {
     margin-top: 30px;
     margin-bottom:2px;
 }
 .copyright {
-    
     width:910px;
     height:30px;
     margin-top: 10px;
+    margin-left:40px;
+    font-size:12px;
+    color:#637479;
 }
-
-

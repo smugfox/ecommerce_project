@@ -86,15 +86,16 @@ session_start();
                    </div>
                    
                    <div class="price">
-                     <h2>$<?php echo $row["Price"]; ?></h2>
+                     
                      <p><?php echo $row["Product_Description"]; ?></p>
                    </div>
                  </div>
+                 
                 
                
                 <div class="jcart_side">
                   	<form method="post" action="" class="jcart">
-					<fieldset>
+					<fieldset style="border:none;">
 						<input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken'];?>" />
 						<input type="hidden" name="my-item-id" value="<?php echo $row['ID'];?>" />
 						<input type="hidden" name="my-item-name" value="<?php echo $row['Product_Name'];?>" />
@@ -114,14 +115,15 @@ session_start();
 							</li>
 						</ul>
 
-						<input type="submit" name="my-add-button" value="add to cart" class="button" 
+						<input type="submit" name="my-add-button" value="add to cart" style="margin-left:35px;" class="button" 
 						<?php if($row['Quantity_Available'] <= 0) {
 								        echo " DISABLED ";
 								}
 								?>/>
 					</fieldset>
 				    </form> 
-            </div> 
+                </div> 
+              </div>
             </div>
               <!--END MAIN-->
  

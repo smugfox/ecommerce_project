@@ -9,5 +9,7 @@ $(document).ready(function(){
     .end()
     .appendTo('#slideshow');
 },  10000);
-    
+    $('input').focus(function(){
+     $(this).css('outline-color','#fe6f61');
+  });
     });

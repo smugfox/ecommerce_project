@@ -15,6 +15,7 @@ session_start();
     <script type="text/javascript" src="jcart-1.3/jcart/js/jcart.min.js"></script>
     <script type="text/javascript" src="jcart-1.3/jcart/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
     </head>
     <body>
         <!--CONTAINER-->
@@ -62,7 +63,7 @@ session_start();
                 <input type="text" name="email" class="reg" placeholder="Email Address"><br>
                 <input type="password" name="password" class="reg" placeholder="Password"><br>
                 <p class="action_bottom">
-                    <input type="submit" value="Sign Up" class="button">
+                    <input type="submit" style="margin-bottom:15px; margin-top:15px; margin-left:35px;" value="Sign Up" class="button">
                     or
                     <a href="index.php" class="return_store">return to store</a>
                 </p>

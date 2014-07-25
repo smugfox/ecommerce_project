@@ -1,53 +1,41 @@
 body {
-    
     background-color: #15191b;
     color:#ccc;
+    font-family: sans-serif;
 }
-
 ul {
     list-style-type: none;
     line-height:20px;
 }
-
 a {
     text-decoration:none;
 }
-
-
-
 #container {
     width:1020px;
     margin:auto;
     background-color:#000;
 }
-
 #sidebar {
     width: 250px;
     height: 90px;
     float:right;
     margin-right:30px;
-    
 }
-
 #header {
-     
     width:960px;
     height:100px;
     margin:auto;
     display:block;
 }
-
 #logo {
     width:960px;
     height: 300px;
     margin:auto;
     display:block;
 }
-
 #logo h1 {
     margin:0;
 }
-
 #logo img {
     width:580px;
 }
@@ -58,7 +46,6 @@ a {
     display:block;
     background-color:#15191b;
 }
-
 /*#nav form{
     border:none;
     margin-right:0;
@@ -66,30 +53,26 @@ a {
     margin-top:20px;
 }
 */
-#nav ul {
+ #nav ul {
     width:745px;
     padding:0;
 }
-
 #nav ul li {
     width:104px;
     height:64px;
     float:left;
     display:block;
 }
-
 #nav ul li a {
     color:#b0c1c7;
 }
-
 #reg_form {
     text-align: center;
 }
-
-#reg_form p{
-   font-size:18px;
-   margin-bottom: 2px;
-   margin-top: 2px;
+#reg_form p {
+    font-size:18px;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 a {
     color:#fe6f61;
@@ -97,13 +80,11 @@ a {
 a:visited {
     color:#fe6f61;
 }
-
 input.reg {
     border:0;
     padding: 5px;
     background-color:#B0C1C7
 }
-
 input.button {
     margin-top:5px;
     background-color:#fe6f61;
@@ -113,7 +94,6 @@ input.button {
     padding:10px;
     border-radius:4px;
 }
-
 #go {
     width:18px;
     height:18px;
@@ -123,7 +103,6 @@ input.button {
     padding:6px;
     background-color:#B0C1C7;
 }
-
 #q {
     margin-left:0;
     border:none;
@@ -134,12 +113,10 @@ input.button {
     background-color:#B0C1C7;
     height:28px;
 }
-
 ::-webkit-input-placeholder {
-   margin-left:2px;
-   color: #000;
+    margin-left:2px;
+    color: #000;
 }
-
 .home {
     width:36px;
     height:20px;
@@ -148,16 +125,14 @@ input.button {
     background-color:#15191b;
     color:#1f2527;
 }
-
 .products {
     width:36px;
     height:20px;
     padding:22px 34px;
     float:left;
-    background-color:#15191b; 
+    background-color:#15191b;
     color:#1f2527;
 }
-
 .login {
     width:66px;
     height:20px;
@@ -166,7 +141,6 @@ input.button {
     background-color:#15191b;
     color:#1f2527;
 }
-
 .sign_up {
     width:56px;
     height:20px;
@@ -175,16 +149,14 @@ input.button {
     background-color:#15191b;
     color:#1f2527;
 }
-
 .logout {
     width:56px;
     height:20px;
     padding:22px 34px;
     float:left;
-    background-color:#15191b; 
+    background-color:#15191b;
     color:#1f2527;
 }
-
 .account {
     width:56px;
     height:20px;
@@ -193,44 +165,35 @@ input.button {
     background-color:#15191b;
     color:#1f2527;
 }
-
 #slideshow {
     width:960px;
     height:405px;
     margin:0 30px 30px 30px;
     position: relative;
 }
-
-#slideshow div  { 
-    position: absolute; 
+#slideshow div {
+    position: absolute;
     width:960px;
     height:405px;
 }
-
 #slideshow div img {
-    
 }
-
 #main {
     width: 960px;
     display:table;
     margin:auto;
 }
-
 #cell_div {
     width:630px;
     float:right;
     display:block;
 }
-
-
 .cell {
     width:300px;
     height:415px;
     float:left;
     margin:0 7px 0 7px;
 }
-
 .cell_image {
     width: 300px;
     height: 300px;
@@ -240,7 +203,6 @@ input.button {
     width: 300px;
     margin-bottom:0;
 }
-
 .cell_description_box {
     width:300px;
     height: 100px;
@@ -253,42 +215,34 @@ input.button {
 .cell_description_box:hover {
     background-color: #fe6f61;
 }
-
 .description {
     width: 300px;
     height:68px;
 }
-
 .description h4 {
     width: 200px;
     padding: 15px 0 0 8px;
     margin-top:0;
     padding-top:40px;
 }
-
 .description p {
     font-weight:bold;
     float:right;
     margin-top:40px;
-    color: #fff;
+    color: #000;
     padding: 10px;
-    background-color:#fe6f61;
+    background-color:#81F79F;
     border-radius:8px;
     margin-right: 5px;
 }
-
-.description p:hover {
-    background-color:#fff;
-}
-
 #side {
     width:300px;
     height:500px;
     float:left;
     display:block;
     background-color:#1f2527;
+    padding:10px;
 }
-
 #footer {
     width:910px;
     height:212px;
@@ -296,53 +250,72 @@ input.button {
     display: block;
     background-color:#1f2527;
     padding: 28px 15px 8px 15px;
+    font-size:14px;
 }
-
 #footer_left {
     width:280px;
     float:left;
     margin-right:36px;
+    
 }
-
 #footer_left h3 {
     color:#fff;
     margin: 0 0 22px 0;
 }
-
 #footer_left p {
-    margin: 0 0 20px 0;
+    margin: 0;
     height:84px;
 }
-
 #footer_mid {
     width: 300px;
     float:left;
 }
-
 #footer_mid h3 {
     color:#fff;
     margin: 0 0 22px 0;
 }
-
 #footer_mid ul {
     margin: 0 0 25px 0;
     padding-left:0;
 }
-
 #footer_mid ul li {
     float:left;
     margin:0 10px 0 0;
 }
-
 #footer_mid p {
     margin-top: 30px;
     margin-bottom:2px;
 }
-
 .copyright {
-    
     width:910px;
     height:30px;
     margin-top: 10px;
+    margin-left:40px;
+    font-size:12px;
+    color:#637479;
 }
-
+.recent_posts {
+    color:#fff;
+    margin-top:0;
+}
+.galaxy_added {
+    color:#fe6f61;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:4px;
+    margin-left:0;
+}
+.galaxy_date{
+   color:#637479;
+   margin-top:0;
+   margin-right:0;
+   margin-bottom:9px;
+   margin-left:0;
+}
+.galaxy_p {
+    color:#B0C1C7;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:15px;
+    margin-left:0;
+}

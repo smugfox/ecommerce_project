@@ -101,16 +101,19 @@
     
     <!--SIDE-->
     <div id="side">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Donec egestas purus malesuada sem feugiat, et mollis tortor 
-        pharetra. Quisque imperdiet ut diam vel ullamcorper. Integer 
-        vulputate condimentum pharetra. Fusce dolor augue, volutpat 
-        faucibus risus a, sagittis laoreet nisl. Duis faucibus, sem 
-        ut posuere elementum, mi urna volutpat orci, non hendrerit 
-        orci dolor eu diam. Phasellus elementum suscipit volutpat. 
-        Morbi vulputate erat interdum feugiat commodo. Nunc et nulla 
-        tempor, sollicitudin mi id, vestibulum risus. Praesent auctor 
-        nisl orci, vel tristique turpis ornare sed.</p>  
+      <h3 class="recent_posts">Galaxy Warehouse Updates</h3>
+        <h4 class="galaxy_added">Messier 82 Galaxy Added</h4>
+        <h6 class="galaxy_date">Posted July 20, 2014</h6>
+        <p class="galaxy_p">For the low low price of just $99000, the Messier 82 galaxy cluster can be yours!</p><br>
+        <h4 class="galaxy_added">Holmberg II Galaxy Added</h4>
+        <h6 class="galaxy_date">Posted July 18, 2014</h6>
+        <p class="galaxy_p">The Holmber II mega cluster has been added, and boy is it a beuty!  Yours for only a measly $28000.</p><br>
+        <h4 class="galaxy_added">Leo Triplet Galaxy Added</h4>
+        <h6 class="galaxy_date">Posted July 16, 2014</h6>
+        <p class="galaxy_p">The Leo Triplet galaxy is now up for sale, so grab it while it lasts!</p><br>
+        <h4 class="galaxy_added">Sagittarius Has Been Added</h4>
+        <h6 class="galaxy_date">Posted July 12, 2014</h6>
+        <p class="galaxy_p">The beautiful Sagittarius galaxy is now up for sale and it's a real looker.  </p><br>
     </div>
     <!--END OF SIDE-->
     </div>
