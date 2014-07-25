@@ -55,10 +55,19 @@
     <!--MAIN-->
     <div id="main">
       <div id="order_successful">
-      <?php echo "<p>ORDER SUCCESSFUL</p>"?>
+      <?php echo "<p style='margin-left: 250px; font-weight: bold; font-size: 40px;'>ORDER SUCCESSFUL</p>"?>
       </div>
         <form name="input" action="index.php" method="post">
-                 	<input type="submit" value="Submit">
+                 	<input type="submit" value="Return to Homepage" style="
+                    margin-left: 380px;
+                    margin-bottom: 40px;
+                    background-color: #fe6f61;
+                    border: none;
+                    padding: 10px;
+                    color: #fff;
+                    font-weight: bold;
+                    border-radius: 4px;
+                    ">
                  </form>
     </div>
     <!--END OF MAIN-->
