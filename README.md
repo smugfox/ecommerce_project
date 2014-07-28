@@ -1,3 +1,2 @@
-ecommerce_project
-=================
-Tekmecas eshop project.
+Ecommerce Project for Cloud Academy
+
