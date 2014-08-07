@@ -1,4 +1,4 @@
-Ecommerce Project for Cloud Academy
+Ecommerce Project
 
 
 This is my E-shop that I built for the Cloud Academy porgram that mock sells galaxies.  
